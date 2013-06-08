@@ -6,97 +6,73 @@
 <title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if}{$SEO['site_title']}</title>
 <meta name="keywords" content="{$SEO['keyword']}">
 <meta name="description" content="{$SEO['description']}">
-<link href="{CSS_PATH}cchp/main.css" rel="stylesheet" type="text/css" />
-
+<link href="{CSS_PATH}hhcp/main.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="{JS_PATH}jquery.min.js"></script>
-<!--
-<script type="text/javascript" src="{JS_PATH}jquery.sgallery.js"></script>
-<script type="text/javascript" src="{JS_PATH}search_common.js"></script>
--->
 </head>
 <body>
-<!--
-<div class="body-top">
-    <div class="content">
-    {pc:content  action="position" posid="9" order="id" num="10" cache="3600"}
-    		<div id="announ">
-                 <ul>
-                 {loop $data $k $v}
-                      <li><a href="{$v[url]}">{$v[title]}</a></li>
-                      {/loop}
-                 </ul>
-            </div>
-     {/pc}
-	 {php echo runhook('glogal_header')}
-<script type="text/javascript">
-$(function(){
-	startmarquee('announ',22,1,500,3000);
-})
-</script>
-            <div class="login lh24 blue"><a href="{APP_PATH}index.php?m=content&c=rss&siteid={get_siteid()}" class="rss ib">rss</a><span class="rt"><script type="text/javascript">document.write('<iframe src="{APP_PATH}index.php?m=member&c=index&a=mini&forward='+encodeURIComponent(location.href)+'&siteid={get_siteid()}" allowTransparency="true"  width="500" height="24" frameborder="0" scrolling="no"></iframe>')</script></span></div>
-    </div>
-</div>
--->
-
 <div id="main">
- <div id="mtop">
-  <div class="header">
-	<div class="logo"><a href="{siteurl($siteid)}/"><img src="{IMG_PATH}v9/logo.jpg" /></a></div>
-<!--
-    <div class="search">
-    	<div class="tab" id="search">
-			{php $j=0}
-			{php $search_model = getcache('search_model_'.$siteid, 'search');}
-			{loop $search_model $k=>$v}
-			{php $j++;}
-				<a href="javascript:;" onclick="setmodel({$v['typeid']}, $(this));" style="outline:medium none;" hidefocus="true" {if $j==1 && $typeid=$v['typeid']} class="on" {/if}>{$v['name']}</a>{if $j != count($search_model)}<span> | </span>{/if}
-			{/loop}
-			{php unset($j);}
-		</div>
+  <div id="mtop">
+	<div id="logo"><a href="{siteurl($siteid)}/"></a></div>
 
-        <div class="bd">
-            <form action="{APP_PATH}index.php" method="get" target="_blank">
-				<input type="hidden" name="m" value="search"/>
-				<input type="hidden" name="c" value="index"/>
-				<input type="hidden" name="a" value="init"/>
-				<input type="hidden" name="typeid" value="{$typeid}" id="typeid"/>
-				<input type="hidden" name="siteid" value="{$siteid}" id="siteid"/>
-                <input type="text" class="text" name="q" id="q"/><input type="submit" value="搜 索" class="button" />
-            </form>
-        </div>
-    </div>
--->
-<!--
-    <div class="banner"><script language="javascript" src="{APP_PATH}index.php?m=poster&c=index&a=show_poster&id=1"></script></div>
--->
-    <div class="bk3"></div>
-    <div class="nav-bar">
-    	<map>
+    <div align="right">
+	  <img src="{IMG_PATH}hhcp/top_bb.png" width="107"  height="19" border="0" usemap="#Map"/>
+        <map name="Map" id="Map">
+           <area shape="rect" coords="6,2,52,18" href="/"/>
+           <area shape="rect" coords="57,2,102,17" href="/en/"/>
+        </map>
+	</div>
+	
+	<script>
+	function checksubmen(mid)
+{
+	$(".subbg1").css('display','none');
+	$("#s"+mid).css('display','block');
+	
+}
+
+function checkmouse()
+{
+    
+    $(".subbg1").css('display', 'none');
+}
+	</script>
+	
+    <div id="menu">
     	{pc:content action="category" catid="0" num="25" siteid="$siteid" order="listorder ASC"}
-        	<ul class="nav-site">
-			<li><a href="{siteurl($siteid)}"><span>首页</span></a></li>
-			{loop $data $r}
-			<li class="line">|</li>
-			<li><a href="{$r[url]}"><span>{$r[catname]}</span></a></li>
-			{/loop}
-            </ul>
+			<a href="{siteurl($siteid)}"><span>首页</span></a>
+			{loop $data $k $r}
+			 <a href="{$r[url]}" onmouseover="checksubmen('{$n}')" onmouseout="checkmouse()" ><span>{$r[catname]}</span></a>
+            {/loop}
         {/pc}
 		{php echo runhook('glogal_menu')}
-        </map>
     </div> 
 	
-	{if $top_parentid}
-    <div class="subnav">
-		{pc:content action="category" catid="$top_parentid" num="15" siteid="$siteid" order="listorder ASC"}
-			{loop $data $r}
-			<a href="{$r[url]}">{$r[catname]}</a><span> | </span>
-			{/loop}
+	<div id="submenu">
+	   {pc:content action="category" catid="0" num="25" siteid="$siteid" order="listorder ASC"}
+	   {php $i=1}
+			{loop $data $k $r}
+			 <div id="s{$i}" class="subbg1" onmouseover="checksubmen('{$i}')" onmouseout="checkmouse()"  style="display: none;">
+			    <div class="subbgt">
+			   	{pc:content action="category" catid="$k" num="25" siteid="$siteid" order="listorder ASC"}
+			       {loop $data $r}
+			        <a href="{$r[url]}">{$r[catname]}</a>
+				   {/loop}	
+				{/pc}
+				</div>
+			 </div>
+			 {$i++}
+            {/loop}
         {/pc}
-		<a href="{APP_PATH}index.php?m=video&c=index&a=album">视频专辑</a> <span> | </span>
-    	{if $modelid}<a href="{APP_PATH}index.php?m=content&c=search&catid={$catid}">搜索</a>{/if}
-    </div>
-	{/if}
-</div>
-</div>
-</div>
-</div>
+	</div>
+
+</div>	
+	<div id="maindiv">
+	  <div id="bannerswf">
+	    <img src="{IMG_PATH}hhcp/slide-2.jpg" width="1003"  height="273" border="0"/>
+	  </div>
+	  
+	 <div id="container"> 
+	 </div>
+	
+	
+  
