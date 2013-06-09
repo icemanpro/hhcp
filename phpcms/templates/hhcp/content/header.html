@@ -41,7 +41,7 @@ function checkmouse()
     	{pc:content action="category" catid="0" num="25" siteid="$siteid" order="listorder ASC"}
 			<a href="{siteurl($siteid)}"><span>首页</span></a>
 			{loop $data $k $r}
-			 <a href="{$r[url]}" onmouseover="checksubmen('{$n}')" onmouseout="checkmouse()" ><span>{$r[catname]}</span></a>
+			 <a href="{$r[url]}" onmouseover="checksubmen('{$n}')" onmouseout="checkmouse()" title="{$r[catname]}" ><span>{$r[catname]}</span></a>
             {/loop}
         {/pc}
 		{php echo runhook('glogal_menu')}
@@ -55,7 +55,7 @@ function checkmouse()
 			    <div class="subbgt">
 			   	{pc:content action="category" catid="$k" num="25" siteid="$siteid" order="listorder ASC"}
 			       {loop $data $r}
-			        <a href="{$r[url]}">{$r[catname]}</a>
+			        <a href="{$r[url]}" title="{$r[catname]}" >{$r[catname]}</a>
 				   {/loop}	
 				{/pc}
 				</div>
@@ -70,9 +70,5 @@ function checkmouse()
 	  <div id="bannerswf">
 	    <img src="{IMG_PATH}hhcp/slide-2.jpg" width="1003"  height="273" border="0"/>
 	  </div>
-	  
-	 <div id="container"> 
-	 </div>
-	
-	
+	 
   

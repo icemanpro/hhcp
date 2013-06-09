@@ -5,17 +5,17 @@ a{color:#8c8c8c; text-decoration:none;}
 a:hover{color:#ef8100;}
 
 #main{width:1003px; height:auto; overflow:hidden; margin:0 auto;}
-#mtop{width:1003px; height:83px; margin:0 auto; background:url(../images/hhcp/bg1.jpg) repeat-x; border-bottom:#FFF solid 1px; z-index:9; position:relative;}
-#logo{width:314px; height:28px; float:left; padding-top:40px; padding-left:8px; background:url(../images/hhcp/logo1.jpg) no-repeat bottom; }
+#mtop{width:1003px; height:83px; margin:0 auto; background:url(../../images/hhcp/bg1.jpg) repeat-x; border-bottom:#FFF solid 1px; z-index:9; position:relative;}
+#logo{width:314px; height:28px; float:left; padding-top:40px; padding-left:8px; background:url(../../images/hhcp/logo1.jpg) no-repeat bottom; }
 #logo a{display:block; height:28px;}
-#menu{width:630px; height:35px; float:right; padding-top:26px ; font-family:"å¾®è½¯é›…é»‘", "å®‹ä½“";}
+#menu{width:630px; height:35px; float:right; padding-top:26px ; font-family:"Î¢ÈíÑÅºÚ", "ËÎÌå";}
 #menu a{color:#909090; text-decoration:none; font-weight:400; float:left; display:block; width:75px; height:35px; line-height:35px; text-align:center;}
 #menu a:hover{color:#4a6a9e;padding:0;margin:0px;}
-#submenu{width:560px;  height:auto; clear:both; float:right; overflow:hidden; padding-top:3px; position:relative; font-family:"å¾®è½¯é›…é»‘", "å®‹ä½“"; z-index:10;padding:0;margin:0px;}
+#submenu{width:560px;  height:auto; clear:both; float:right; overflow:hidden; padding-top:3px; position:relative; font-family:"Î¢ÈíÑÅºÚ", "ËÎÌå"; z-index:10;padding:0;margin:0px;}
 .subbg1{FILTER:alpha(opacity=60);opacity:0.6; width:110px; height:auto; background-color:#fff; display:none;}
 .subbgt{height:auto; left:0px; width:110px; position:relative;}
 .subbgt a{display:block; height:28px; text-align:center; line-height:28px; color:#222; text-decoration:none; border-bottom:#5f689f solid 1px; }
-.subbgt a:hover{background:url(../images/hhcp/bg2.jpg) no-repeat;}
+.subbgt a:hover{background:url(../../images/hhcp/bg2.jpg) no-repeat;}
 
 #s1{margin-left:0px;}
 #s2{margin-left:75px;}
@@ -50,21 +50,21 @@ a:hover{color:#ef8100;}
 #c1{width:234px; height:208px; float:left;}
 #c1 a{display:block; width:114px; height:23px; border:#ccc solid 1px; background-color:#f3f3f3; text-align:center; line-height:23px; color:#494949; text-decoration:none; float:left; margin-top:7px; margin-right:1px;}
 #c1 a:hover{color:#ef8100;}
-#lxdiv{clear:both; height:44px; background:url(../img/s2.jpg) no-repeat;}
+#lxdiv{clear:both; height:44px; background:url(../../images/hhcp/s2.jpg) no-repeat;}
 #c2{width:732px; height:208px; float:right;}
 #c2 a{margin:0px 1px;}
 #c3{width:234px; height:180px; float:left;}
-#c3title{height:50px; background:url(../img/s3.jpg) no-repeat;}
+#c3title{height:50px; background:url(../../images/hhcp/s3.jpg) no-repeat;}
 .more{display:block; float:right; width:26px; height:12px; margin-right:14px; margin-top:25px;}
 #topnews{margin:0px; padding:0px;}
 #topnews li{margin:0px; padding:0px; list-style:none; height:23px; line-height:23px; overflow:hidden;}
 .topnewstitle{width:185px; overflow:hidden; float:left; text-align:left;}
 .topnewstime{width:40px; float:right; text-align:right;}
 #c5,#c4{float:right; width:363px; height:180px; overflow:hidden;}
-#c5{background:url(../img/s6.jpg) no-repeat bottom; margin-right:2px;}
-#c4{background:url(../img/s7.jpg) no-repeat bottom;}
-#c5title{height:50px; background:url(../img/s4.jpg) no-repeat; background-position:0px 20px;}
-#c4title{height:50px; background:url(../img/s5.jpg) no-repeat; background-position:0px 20px;}
+#c5{background:url(../../images/hhcp/s6.jpg) no-repeat bottom; margin-right:2px;}
+#c4{background:url(../../images/hhcp/s7.jpg) no-repeat bottom;}
+#c5title{height:50px; background:url(../../images/hhcp/s4.jpg) no-repeat; background-position:0px 20px;}
+#c4title{height:50px; background:url(../../images/hhcp/s5.jpg) no-repeat; background-position:0px 20px;}
 #c5topnews{margin:0px; padding:0px; padding-top:18px;}
 #c5topnews li{margin:0px; padding:0px; list-style:none; line-height:24px; width:210px; padding-left:150px; overflow:hidden;}
 #c4topnews{margin:0px; padding:0px; padding-top:38px;}
