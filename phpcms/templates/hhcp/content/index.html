@@ -32,63 +32,40 @@
 	</div>
     <div class="clear"></div>
     <div id="c3">
-      <div id="c3title"><a href="http://www.hhcp.com.cn/news.asp" class="more" title="更多新闻"></a></div>
+      <div id="c3title"><a href="{$CATEGORYS[23][url]}" class="more" title="更多新闻"></a></div>
       <ul id="topnews">
-        
-		<li><div class="topnewstitle"><a href="http://www.hhcp.com.cn/news_view.asp?newsid=527" title="开拓创新 共谋发展—四川省油气钻采产业联盟隆重成立">开拓创新 共谋发展—四川省油气钻采产业联盟隆重成立</a></div><div class="topnewstime">05-30</div></li>
-		
-		<li><div class="topnewstitle"><a href="http://www.hhcp.com.cn/news_view.asp?newsid=526" title="雅安芦山地震 宏华集团捐款100.2万">雅安芦山地震 宏华集团捐款100.2万</a></div><div class="topnewstime">05-08</div></li>
-		
-		<li><div class="topnewstitle"><a href="http://www.hhcp.com.cn/news_view.asp?newsid=516" title="四川宏华四项油气新装备通过省科技成果鉴定">四川宏华四项油气新装备通过省科技成果鉴定</a></div><div class="topnewstime">04-23</div></li>
-		
-		<li><div class="topnewstitle"><a href="http://www.hhcp.com.cn/news_view.asp?newsid=505" title="宏华钻机荣获2012年度中国机械工业优质品牌">宏华钻机荣获2012年度中国机械工业优质品牌</a></div><div class="topnewstime">04-19</div></li>
-		
-		<li><div class="topnewstitle"><a href="http://www.hhcp.com.cn/news_view.asp?newsid=468" title="新疆巴音郭楞蒙古自治州领导到来公司参观考察">新疆巴音郭楞蒙古自治州领导到来公司参观考察</a></div><div class="topnewstime">03-13</div></li>
+    {pc:content action="lists" catid="23" num="5" sitedid="$siteid" order="inputtime desc"}
+    {loop $data $r}
+		<li><div class="topnewstitle"><a href="{$r[url]}" title="{$r[title]}">{$r[title]}</a></div><div class="topnewstime">{date('m-d',$r[inputtime])}</div></li>
+	 {/loop}
+	 {/pc}	
 		
       </ul>
     </div>
     <div id="c4">
       
-      <div id="c4title"><a href="http://www.hhcp.com.cn/Quality.asp" class="more" title="更多关于质量保证"></a></div>
+      <div id="c4title"><a href="{$CATEGORYS[10][url]}" class="more" title="更多关于质量保证"></a></div>
        <ul id="c4topnews">
-        
-		<li><a href="http://www.hhcp.com.cn/Quality.asp?lm1=3&lm2=15" title="质量体系">质量体系 &gt;</a></li>
-		
-		<li><a href="http://www.hhcp.com.cn/Quality.asp?lm1=3&lm2=16" title="资质认证">资质认证 &gt;</a></li>
-		
-		<li><a href="http://www.hhcp.com.cn/Quality.asp?lm1=3&lm2=17" title="质量控制">质量控制 &gt;</a></li>
+        {pc:content action="category" catid="10" num="4" sitedid="$siteid" order="listorder desc"}
+    {loop $data $r}
+		<li><a href="{$r[url]}" title="{$r[catname]}">{$r[catname]}&gt;</a></li>
+		{/loop}
+		{/pc}
 		
        </ul>
     </div>
     <div id="c5">
      
-      <div id="c5title"><a href="http://www.hhcp.com.cn/about.asp?lm1=1&lm2=11" class="more" title="更多关于企业荣誉" style="margin-right:28px;"></a></div>
+      <div id="c5title"><a href="{$CATEGORYS[24][url]}" class="more" title="更多关于企业荣誉" style="margin-right:28px;"></a></div>
       <ul id="c5topnews">
-        
-		<li><a href="http://www.hhcp.com.cn/news_view.asp?newsid=375" title="四川省建设创新型企业试点企业">四川省建设创新型企业试点企业</a></li>
-		
-		<li><a href="http://www.hhcp.com.cn/news_view.asp?newsid=371" title="四川省高新技术企业">四川省高新技术企业</a></li>
-		
-		<li><a href="http://www.hhcp.com.cn/news_view.asp?newsid=370" title="四川省第一批高新技术示范企业">四川省第一批高新技术示范企业</a></li>
-		
-		<li><a href="http://www.hhcp.com.cn/news_view.asp?newsid=369" title="2005年度德阳工商联合会先进单位">2005年度德阳工商联合会先进单位</a></li>
-		
+       {pc:content action="lists" catid="24" num="4" sitedid="$siteid" order="inputtime desc"}
+    {loop $data $r}
+	 
+		<li><a href="{$r[url]}" title="{$r[title]}">{$r[title]}</a></li>
+	{/loop}
+{/pc}	
        </ul>
     </div>
     <div class="clear"></div>
-    <div id="foot">
-  <div id="foottext">
-   <a href="http://www.hhcp.com.cn/Contact.asp" title="联系我们">联系我们</a> | <a href="" title="网站地图">网站地图</a> | <a href="" title="法律公告">法律公告</a> | <a href="" title="隐私保护">隐私保护</a>
-  </div>
-  <div class="ftxt1">
-  <strong>四川宏华石油设备有限公司版权所有</strong><br>
-   地址：四川省广汉市中山大道南二段 邮编：618300  E-mail：hhcp@hhcp.com.cn 蜀ICP备05017261　
-  </div>
-</div>
-  </div>
-</div>
-</div>
-
-
-</body></html>
-<!--{template "content","footer"}-->
+    
+{template "content","footer"}
