@@ -1,20 +1,25 @@
 {template "content","header_page"}
-<div id="content">
-	<div class="col-left left-nav">
-    	<h1>关于我们</h1>
-    	<ul class="content">
-        	{loop $arrchild_arr $cid}
-                <li{if $catid==$cid} class="cur"{/if}><a href="{$CATEGORYS[$cid][url]}">{$CATEGORYS[$cid][catname]}</a></li>
+
+<div id="container">
+	<div id="subleft">
+    	<div id="sublefttitle">{$CATEGORYS[$CAT[parentid]][catname]}</div>
+            {loop $arrchild_arr $cid}
+                <a{if $catid==$cid} style="background-color:#d4ddee; border:#93a9d5 solid 1px;color:#0f397f;" {/if} href="{$CATEGORYS[$cid][url]}">{$CATEGORYS[$cid][catname]}</a>
 			{/loop}
-        </ul>
-        <div class="bottom"></div>
+    
+        
     </div>
-  <div class="col-auto">
-    	<img src="{IMG_PATH}v9/about_ad.png" width="659" height="171" />
-    	<h1 class="title">{$title}</h1>
-        <div class="content">
-        	    {$content}
-        </div>
+	<div id="submain">
+	<div id="subtitlediv">
+      <div id="subline"></div>
+      <a href="#end" class="end"><img src="{IMG_PATH}hhcp/end.jpg" width="29" height="11"></a>
+      <div id="pos">首页 &gt; {catpos($catid)}</div>
     </div>
- </div>
+	<div class="clear"></div>
+	<div id="newsdiv">
+	 {$content}
+	</div> 
+    </div>
+</div>
+<div class="clearfoot"><a name="end"></a><a href="#top" class="top"><img src="{IMG_PATH}hhcp/top.jpg" width="29" height="11"></a></div>
 {template "content","footer"}
