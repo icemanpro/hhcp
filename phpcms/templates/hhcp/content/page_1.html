@@ -1,0 +1,10 @@
+{pc:content action="category" catid="$catid" num="1" siteid="$siteid" order="listorder ASC"}
+				  {loop $data $r}
+				  {php echo "<script language='javascript'>";}
+{php echo "     location='$r[url]' ; ";}
+{php echo "</script>";}
+
+
+				  {/loop}
+				
+			{/pc}

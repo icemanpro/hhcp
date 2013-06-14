@@ -7,7 +7,19 @@
 <meta name="keywords" content="{$SEO['keyword']}">
 <meta name="description" content="{$SEO['description']}">
 <link href="{CSS_PATH}hhcp/main.css" rel="stylesheet" type="text/css" />
+<link href="{CSS_PATH}jquery.ad-gallery.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="{JS_PATH}jquery.min.js"></script>
+<script type="text/javascript" src="{JS_PATH}jquery.ad-gallery.js"></script> 
+<script>
+$(function(){ 
+   $('.ad-gallery').adGallery({
+   width:1003,
+   height:273,
+   display_back_and_forward:false
+   }); 
+})
+</script>
+
 </head>
 <body>
 <div id="main">
@@ -68,7 +80,31 @@ function checkmouse()
 </div>	
 	<div id="maindiv">
 	  <div id="bannerswf">
-	    <img src="{IMG_PATH}hhcp/slide-2.jpg" width="1003"  height="273" border="0"/>
+	  <!--  <img src="{IMG_PATH}hhcp/slide-2.jpg" width="1003"  height="273" border="0"/>-->
+	 <div class="ad-gallery">
+  <div class="ad-image-wrapper">
+  </div>
+  <div class="ad-controls">
+  </div>
+  <div class="ad-nav">
+    <div class="ad-thumbs">
+      <ul class="ad-thumb-list">
+        <li>
+          <a href="11.jpg">
+            <img src="11.jpg" title="Title for 1.jpg">
+          </a>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+	  
+	  
+	  
+	  
+	  
+	  
 	  </div>
 	 
   

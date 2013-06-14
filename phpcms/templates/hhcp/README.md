@@ -1,4 +1,0 @@
-hhcp
-====
-
-phpcms theme
