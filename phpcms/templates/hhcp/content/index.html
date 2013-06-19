@@ -14,20 +14,15 @@
     <div id="lxdiv"></div>
     </div>
     <div id="c2">
-	
-	 {pc:content action="category" catid="9" num="4" siteid="$siteid" order="listorder ASC"}
+    
+		 {pc:content action="category" catid="9" num="4" siteid="$siteid" order="listorder ASC"}
+	 <ul id="scroller">
 			{loop $data $r}
-			 <a href="{$r[url]}" title="{$r[catname]}" 
-			 {if $n==4}
-			  style="margin-right:0px;"
-			 {/if}
-			 ><img src="{$r[image]}" width="176" height="208" >
-			 </a>
+			<li><a href="{$r[url]}" title="{$r[catname]}" ><img src="{$r[image]}" width="176" height="208" ></a>
+			 </li>
             {/loop}
+			</ul>
         {/pc}
-
-	 		
-	
 	
 	</div>
     <div class="clear"></div>
