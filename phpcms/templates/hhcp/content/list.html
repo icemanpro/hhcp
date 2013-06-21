@@ -2,10 +2,16 @@
 
 <div id="container">
 	<div id="subleft">
-    	<div id="sublefttitle">{$CATEGORYS[$CAT[parentid]][catname]}</div>
-		 {pc:content action="category" catid="$parentid" num="20" siteid="$siteid" order="listorder ASC"}
+    	<div id="sublefttitle">{if $CATEGORYS[$CAT[parentid]][parentid]==0}
+	 {php $pid=$parentid;$depth=2;$cid=$catid;}
+	 {else}
+		{php $pid=$CATEGORYS[$CAT[parentid]][parentid];$depth=3;$cid=$parentid;}
+		{/if}
+		{$CATEGORYS[$pid][catname]}
+		</div>
+            {pc:content action="category" catid="$pid" num="20" siteid="$siteid" order="listorder ASC"}
 			{loop $data $r}
-			 <a {if $catid==$r[catid]} style="background-color:#d4ddee; border:#93a9d5 solid 1px;color:#0f397f;" {/if} href="{$r[url]}" title="{$r[catname]}" >{$r[catname]}</a>
+			 <a {if ($cid==$r[catid])} style="background-color:#d4ddee; border:#93a9d5 solid 1px;color:#0f397f;" {/if} href="{$r[url]}" title="{$r[catname]}" >{$r[catname]}</a>
             {/loop}
         {/pc}
 		
@@ -14,11 +20,38 @@
 	<div id="subtitlediv">
       <div id="subline"></div>
       <a href="#end" class="end"><img src="{IMG_PATH}hhcp/end.jpg" width="29" height="11"></a>
-      <div id="pos">首页 &gt; {catpos($catid)}</div>
+      <div id="pos">首页 &gt; {catpos($cid)}</div>
     </div>
 	<div class="clear"></div>
+	<div class="prolm">
+	{if ($depth==3)}
+	{pc:content action="category" catid="$cid" num="20" siteid="$siteid" order="listorder ASC"}
+			{loop $data $r}
+			 <a class="prolmtitle {if $catid==$r[catid]}lmon{/if}" href="{$r[url]}" title="{$r[catname]}" >{$r[catname]}</a><span class="prolmline">|</span>
+            {/loop}
+        {/pc}
+	{/if}
+	  </div>
 	<div id="newsdiv">
 
+	  {php $i=0;}
+	  
+			   {pc:content action="lists" catid="$catid" num="20" sitedid="$siteid" order="inputtime desc" thumb="1"}
+    			  {loop $data $j}
+			   <div class="ct_li">
+            	<a href="{$j[url]}" title="{$j[title]}"><img src="{$j[thumb]}" alt="{$j[title]}"></a>
+                <div class="ct_name">{$j[title]}</div>
+                <div class="down"><a href="{$j[url]}" class="xxjs">详细介绍</a>
+				<a href="javascript:void(0)" title="没有附件" target="_blank" class="xz">附件下载</a>
+                 </div>
+               </div>
+			   {$i++}
+			   {if $i % 4 ==0}
+			   <div class="clear"></div>
+			   {/if}
+			
+            {/loop}
+        {/pc}
 	</div> 
     </div>
 </div>

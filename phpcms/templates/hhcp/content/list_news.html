@@ -18,39 +18,33 @@
     </div>
 	<div id="submain">
 	<div id="subtitlediv">
-      <div id="subline"></div>
+      <div id="newsso"></div>
       <a href="#end" class="end"><img src="{IMG_PATH}hhcp/end.jpg" width="29" height="11"></a>
       <div id="pos">首页 &gt; {catpos($cid)}</div>
     </div>
 	<div class="clear"></div>
-	<div class="prolm">
-	{if ($depth==3)}
-	{pc:content action="category" catid="$cid" num="20" siteid="$siteid" order="listorder ASC"}
-			{loop $data $r}
-			 <a class="prolmtitle {if $catid==$r[catid]}lmon{/if}" href="{$r[url]}" title="{$r[catname]}" >{$r[catname]}</a><span class="prolmline">|</span>
-            {/loop}
-        {/pc}
-	{/if}
-	  </div>
 	<div id="newsdiv">
-	<link href="{CSS_PATH}hhcp/colorbox.css" rel="stylesheet" type="text/css" />
-	<script type="text/javascript" src="{JS_PATH}hhcp/jquery.colorbox.js"></script> 
-	<script type="text/javascript" src="{JS_PATH}hhcp/jquery.colorbox-zh-CN.js"></script> 
-	<ul id="pplist">
- {pc:content action="lists" catid="$catid" num="20" sitedid="$siteid" order="inputtime desc"  }
-    			  {loop $data $j}
-			   <li>
-			   <a class='group1' href="{$j[thumb]}" title="{$j[title]}"><image src="{$j[thumb]}" alt="{$j[title]}" width="159" height="108">
-			   {$j[title]}
-			   </a>
-			   </li>		
-            {/loop}
-        {/pc}
-		</ul>
-		 <script>
-            jQuery('.group1').colorbox({rel:'group1'});
-        </script>
-	</div> 
+	  <div id="news_ul">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tdfootline">
+      <tbody>
+ {pc:content action="lists" catid="$catid" num="4" siteid="$siteid" order="inputtime desc" page="$page"}
+			{loop $data $r}
+	  <tr>
+          <td>
+          <a href="{$r[url]}" title="{$r[title]}" class="">{$r[title]}</a>
+          </td>
+          <td width="12%" align="left">{date('Y-m-d',$r[inputtime])}</td>
+        </tr>
+		 {/loop}
+		 {/pc}
+      
+      </tbody></table>
+      </div>
+      </div>
+	  <div id="page">
+	  {$pages}
+	  </div>
+ 
     </div>
 </div>
 <div class="clearfoot"><a name="end"></a><a href="#top" class="top"><img src="{IMG_PATH}hhcp/top.jpg" width="29" height="11"></a></div>
